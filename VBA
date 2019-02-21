@@ -1,0 +1,543 @@
+Option Explicit
+    Const Price_bottle1 = 1.5
+    Const Price_Juice1 = 2
+    Const Price_Coffee1 = 2.5
+    Const Price_Soda1 = 2
+    Const Price_Bubble1 = 3
+    Const Price_Matcha1 = 3.5
+    Const Price_Cheese1 = 3.5
+    Const Price_Chocolate1 = 3.5
+    Const Price_Cream1 = 3
+    Const Price_Fried_Sausage1 = 3.5
+    Const Price_Fried_Egg1 = 2.5
+    Const Price_Fried_Chicken1 = 3.5
+    Const Price_Salad1 = 2.5
+    Const Price_French1 = 2.5
+    Const Price_Special1 = 7
+    Const Price_Veget1 = 7
+    Const Price_Fried1 = 8
+    Const Price_Lamp1 = 8
+    Const Price_Fish1 = 8
+    Const Price_Beef1 = 8
+    Const Price_Pork1 = 8
+    Const Price_Chicken1 = 8
+    Const Tax_Rate = 7.8
+    
+    Dim iTax, iTotal, iSubTotal As Double
+    
+    Dim iTemcost(0 To 22) As Double
+    
+
+
+Private Sub Beef1_Click()
+If (Beef1.Value = True) Then
+TextBeef.Enabled = True
+End If
+
+If (Beef1.Value = False) Then
+TextBeef.Enabled = False
+TextBeef.Text = ""
+End If
+End Sub
+
+Private Sub Bottle1_Click()
+If (Bottle1.Value = True) Then
+TextBottle.Enabled = True
+End If
+
+If (Bottle1.Value = False) Then
+TextBottle.Enabled = False
+TextBottle.Text = ""
+End If
+End Sub
+
+Private Sub Bubble1_Click()
+If (Bubble1.Value = True) Then
+TextBubble.Enabled = True
+End If
+
+If (Bubble1.Value = False) Then
+TextBubble.Enabled = False
+TextBubble.Text = ""
+End If
+End Sub
+
+Private Sub Cheese1_Click()
+If (Cheese1.Value = True) Then
+TextCheese.Enabled = True
+End If
+
+If (Cheese1.Value = False) Then
+TextCheese.Enabled = False
+TextCheese.Text = ""
+End If
+End Sub
+
+Private Sub Chicken1_Click()
+If (Chicken1.Value = True) Then
+TextChicken.Enabled = True
+End If
+
+If (Chicken1.Value = False) Then
+TextChicken.Enabled = False
+TextChicken.Text = ""
+End If
+
+End Sub
+
+Private Sub Chocolate1_Click()
+If (Chocolate1.Value = True) Then
+TextChocolate.Enabled = True
+End If
+
+If (Chocolate1.Value = False) Then
+TextChocolate.Enabled = False
+TextChocolate.Text = ""
+End If
+End Sub
+
+
+Private Sub Coffee1_Click()
+If (Coffee1.Value = True) Then
+TextCoffee.Enabled = True
+End If
+
+If (Coffee1.Value = False) Then
+TextCoffee.Enabled = False
+TextCoffee.Text = ""
+End If
+End Sub
+
+Private Sub Cream1_Click()
+If (Cream1.Value = True) Then
+TextCream.Enabled = True
+End If
+
+If (Cream1.Value = False) Then
+TextCream.Enabled = False
+TextCream.Text = ""
+End If
+End Sub
+
+Private Sub Fish1_Click()
+If (Fish1.Value = True) Then
+TextFish.Enabled = True
+End If
+
+If (Fish1.Value = False) Then
+TextFish.Enabled = False
+TextFish.Text = ""
+End If
+End Sub
+
+
+
+
+
+
+
+Private Sub French1_Click()
+If (French1.Value = True) Then
+TextFrench.Enabled = True
+End If
+
+If (French1.Value = False) Then
+TextFrench.Enabled = False
+TextFrench.Text = ""
+End If
+End Sub
+
+Private Sub Fried_Chicken1_Click()
+If (Fried_Chicken1.Value = True) Then
+TextFChicken.Enabled = True
+End If
+
+If (Fried_Chicken1.Value = False) Then
+TextFChicken.Enabled = False
+TextFChicken.Text = ""
+End If
+End Sub
+
+Private Sub Fried_Egg1_Click()
+If (Fried_Egg1.Value = True) Then
+TextEgg.Enabled = True
+End If
+
+If (Fried_Egg1.Value = False) Then
+TextEgg.Enabled = False
+TextEgg.Text = ""
+End If
+End Sub
+
+Private Sub Fried_Sausage1_Click()
+If (Fried_Sausage1.Value = True) Then
+TextSausage.Enabled = True
+End If
+
+If (Fried_Sausage1.Value = False) Then
+TextSausage.Enabled = False
+TextSausage.Text = ""
+End If
+End Sub
+
+Private Sub Fried1_Click()
+If (Fried1.Value = True) Then
+TextFried.Enabled = True
+End If
+
+If (Fried1.Value = False) Then
+TextFried.Enabled = False
+TextFried.Text = ""
+End If
+End Sub
+
+
+
+
+Private Sub Juice1_Click()
+If (Juice1.Value = True) Then
+TextJuice.Enabled = True
+End If
+
+If (Juice1.Value = False) Then
+TextJuice.Enabled = False
+TextJuice.Text = ""
+End If
+End Sub
+
+
+
+Private Sub Lamp1_Click()
+If (Lamp1.Value = True) Then
+TextLamp.Enabled = True
+End If
+
+If (Lamp1.Value = False) Then
+TextLamp.Enabled = False
+TextLamp.Text = ""
+End If
+End Sub
+
+
+Private Sub Matcha1_Click()
+If (Matcha1.Value = True) Then
+TextMatcha.Enabled = True
+End If
+
+If (Matcha1.Value = False) Then
+TextMatcha.Enabled = False
+TextMatcha.Text = ""
+End If
+End Sub
+
+Private Sub Pork1_Click()
+If (Pork1.Value = True) Then
+TextPork.Enabled = True
+End If
+
+If (Pork1.Value = False) Then
+TextPork.Enabled = False
+TextPork.Text = ""
+End If
+End Sub
+
+Private Sub Salad1_Click()
+If (Salad1.Value = True) Then
+TextSalad.Enabled = True
+End If
+
+If (Salad1.Value = False) Then
+TextSalad.Enabled = False
+TextSalad.Text = ""
+End If
+End Sub
+
+
+Private Sub Save1_Click()
+
+Dim wks As Worksheet
+Dim AddNew As Range
+Set wks = Sheet1
+Set AddNew = wks.Range("A653356").End(xlUp).Offset(1, 0)
+
+AddNew.Offset(0, 0).Value = cmbPaymentMethod.Text
+AddNew.Offset(0, 1).Value = txtPaymentMethod.Text
+AddNew.Offset(0, 2).Value = IblChange.Caption
+AddNew.Offset(0, 3).Value = IblTax.Caption
+AddNew.Offset(0, 4).Value = Iblsubtotal.Caption
+AddNew.Offset(0, 5).Value = IblTotal.Caption
+
+Hisory1.AddItem (cmbPaymentMethod.Text + vbTab + txtPaymentMethod.Text + vbTab + IblChange.Caption + vbTab _
++ IblTax.Caption + vbTab + Iblsubtotal.Caption + vbTab + IblTotal.Caption)
+
+
+End Sub
+
+Private Sub Soda1_Click()
+If (Soda1.Value = True) Then
+TextSoda.Enabled = True
+End If
+
+If (Soda1.Value = False) Then
+TextSoda.Enabled = False
+TextSoda.Text = ""
+End If
+End Sub
+
+Private Sub Special1_Click()
+If (Special1.Value = True) Then
+TextSpecial.Enabled = True
+End If
+
+If (Special1.Value = False) Then
+TextSpecial.Enabled = False
+TextSpecial.Text = ""
+End If
+End Sub
+
+Private Sub TextBeef_Change()
+If Not IsNumeric(TextBeef.Value) Then
+TextBeef = ""
+End If
+End Sub
+
+Private Sub TextBottle_Change()
+If Not IsNumeric(TextBottle.Value) Then
+TextBottle = ""
+End If
+End Sub
+
+Private Sub TextBubble_Change()
+If Not IsNumeric(TextBubble.Value) Then
+TextBubble = ""
+End If
+End Sub
+
+Private Sub TextCheese_Change()
+If Not IsNumeric(TextCheese.Value) Then
+TextCheese = ""
+End If
+End Sub
+
+Private Sub TextChicken_Change()
+If Not IsNumeric(TextChicken.Value) Then
+TextChicken = ""
+End If
+End Sub
+
+Private Sub TextChocolate_Change()
+If Not IsNumeric(TextChocolate.Value) Then
+TextChocolate = ""
+End If
+End Sub
+
+Private Sub TextCoffee_Change()
+If Not IsNumeric(TextCoffee.Value) Then
+TextCoffee = ""
+End If
+End Sub
+
+Private Sub TextCream_Change()
+If Not IsNumeric(TextCream.Value) Then
+TextCream = ""
+End If
+End Sub
+
+Private Sub TextEgg_Change()
+If Not IsNumeric(TextEgg.Value) Then
+TextEgg = ""
+End If
+End Sub
+
+Private Sub TextFChicken_Change()
+If Not IsNumeric(TextFChicken.Value) Then
+TextFChicken = ""
+End If
+End Sub
+
+Private Sub TextFish_Change()
+If Not IsNumeric(TextFish.Value) Then
+TextFish = ""
+End If
+End Sub
+
+Private Sub TextFrench_Change()
+If Not IsNumeric(TextFrench.Value) Then
+TextFrench = ""
+End If
+End Sub
+
+Private Sub TextFried_Change()
+If Not IsNumeric(TextFried.Value) Then
+TextFried = ""
+End If
+End Sub
+
+Private Sub TextJuice_Change()
+If Not IsNumeric(TextJuice.Value) Then
+TextJuice = ""
+End If
+End Sub
+
+Private Sub TextLamp_Change()
+If Not IsNumeric(TextLamp.Value) Then
+TextLamp = ""
+End If
+End Sub
+
+Private Sub TextMatcha_Change()
+If Not IsNumeric(TextMatcha.Value) Then
+TextMatcha = ""
+End If
+End Sub
+
+Private Sub TextPork_Change()
+If Not IsNumeric(TextPork.Value) Then
+TextPork = ""
+End If
+End Sub
+
+Private Sub TextSalad_Change()
+If Not IsNumeric(TextSalad.Value) Then
+TextSalad = ""
+End If
+End Sub
+
+Private Sub TextSausage_Change()
+If Not IsNumeric(TextSausage.Value) Then
+TextSausage = ""
+End If
+End Sub
+
+Private Sub TextSoda_Change()
+If Not IsNumeric(TextSoda.Value) Then
+TextSoda = ""
+End If
+End Sub
+
+Private Sub TextSpecial_Change()
+If Not IsNumeric(TextSpecial.Value) Then
+TextSpecial = ""
+End If
+End Sub
+
+Private Sub TextVeget_Change()
+If Not IsNumeric(TextVeget.Value) Then
+TextVeget = ""
+End If
+End Sub
+
+Private Sub Total1_Click()
+iTemcost(0) = Val(TextBottle.Text) * Price_bottle1
+iTemcost(1) = Val(TextJuice.Text) * Price_Juice1
+iTemcost(2) = Val(TextCoffee.Text) * Price_Coffee1
+iTemcost(3) = Val(TextSoda.Text) * Price_Soda1
+iTemcost(4) = Val(TextBubble.Text) * Price_Bubble1
+iTemcost(5) = Val(TextMatcha.Text) * Price_Matcha1
+iTemcost(6) = Val(TextCheese.Text) * Price_Cheese1
+iTemcost(7) = Val(TextChocolate.Text) * Price_Chocolate1
+iTemcost(8) = Val(TextCream.Text) * Price_Cream1
+iTemcost(9) = Val(TextSausage.Text) * Price_Fried_Sausage1
+iTemcost(10) = Val(TextEgg.Text) * Price_Fried_Egg1
+iTemcost(11) = Val(TextFChicken.Text) * Price_Fried_Chicken1
+iTemcost(12) = Val(TextSalad.Text) * Price_Salad1
+iTemcost(13) = Val(TextFrench.Text) * Price_French1
+iTemcost(14) = Val(TextSpecial.Text) * Price_Special1
+iTemcost(15) = Val(TextVeget.Text) * Price_Veget1
+iTemcost(16) = Val(TextFried.Text) * Price_Fried1
+iTemcost(17) = Val(TextLamp.Text) * Price_Lamp1
+iTemcost(18) = Val(TextFish.Text) * Price_Fish1
+iTemcost(19) = Val(TextBeef.Text) * Price_Beef1
+iTemcost(20) = Val(TextPork.Text) * Price_Pork1
+iTemcost(21) = Val(TextChicken.Text) * Price_Chicken1
+
+Dim iCost, iChange, iSubTotal  As Double
+If (cmbPaymentMethod.Text = "Cash") Then
+iSubTotal = iTemcost(0) + iTemcost(1) + iTemcost(2) + iTemcost(3) + iTemcost(4) + iTemcost(5) + iTemcost(6) + iTemcost(7) + iTemcost(8) + iTemcost(9) + iTemcost(10) + iTemcost(11) + iTemcost(12) + iTemcost(13) + iTemcost(14) + iTemcost(15) + iTemcost(16) + iTemcost(17) + iTemcost(18) + iTemcost(19) + iTemcost(20) + iTemcost(21)
+Iblsubtotal.Caption = iSubTotal
+
+iTax = (iSubTotal * Tax_Rate) / 100
+IblTax.Caption = iTax
+iTotal = iTax + iSubTotal
+IblTotal.Caption = iTotal
+
+iChange = Val(txtPaymentMethod.Text)
+iCost = iChange - (iTax + iSubTotal)
+IblChange.Caption = iCost
+
+ElseIf (cmbPaymentMethod.Text = "Master Card" Or cmbPaymentMethod.Text = "Visa Card" Or cmbPaymentMethod.Text = "Debit Card") Then
+iSubTotal = iTemcost(0) + iTemcost(1) + iTemcost(2) + iTemcost(3) + iTemcost(4) + iTemcost(5) + iTemcost(6) + iTemcost(7) + iTemcost(8) + iTemcost(9) + iTemcost(10) + iTemcost(11) + iTemcost(12) + iTemcost(13) + iTemcost(14) + iTemcost(15) + iTemcost(16) + iTemcost(17) + iTemcost(18) + iTemcost(19) + iTemcost(20) + iTemcost(21)
+Iblsubtotal.Caption = iSubTotal
+    
+iTax = (iSubTotal * Tax_Rate) / 100
+IblTax.Caption = iTax
+iTotal = iTax + iSubTotal
+IblTotal.Caption = iTotal
+
+Else
+Dim answer
+answer = MsgBox("You need to select a payment method", vbInformation, "Taiwanese Food")
+
+
+End If
+
+End Sub
+
+
+Private Sub txtPaymentMethod_Change()
+If Not IsNumeric(txtPaymentMethod.Value) Then
+txtPaymentMethod = ""
+End If
+End Sub
+
+Private Sub UserForm_Activate()
+cmbPaymentMethod.AddItem ("")
+cmbPaymentMethod.AddItem ("Cash")
+cmbPaymentMethod.AddItem ("Master Card")
+cmbPaymentMethod.AddItem ("Visa Card")
+cmbPaymentMethod.AddItem ("Debit Card")
+
+
+End Sub
+
+Private Sub Exit1_Click()
+    Dim iExit As Integer
+    
+    iExit = MsgBox("Confirm if you want to exit", vbQuestion + vbQuestion + vbYesNo, "Made By Di-Heng Liu")
+    If iExit = vbYes Then
+    Unload Me
+    End If
+    
+End Sub
+
+Private Sub Reset1_Click()
+Dim ctl As Control
+For Each ctl In Me.Controls
+If TypeName(ctl) = "TextBox" Or TypeName(ctl) = "ComboBox" Then
+ctl.Value = ""
+
+ElseIf TypeName(ctl) = "CheckBox" Then
+ctl.Value = False
+
+End If
+Next
+
+IblChange.Caption = ""
+IblTax.Caption = ""
+Iblsubtotal.Caption = ""
+IblTotal.Caption = ""
+
+Hisory1.Clear
+
+End Sub
+
+Private Sub Veget1_Click()
+If (Veget1.Value = True) Then
+TextVeget.Enabled = True
+End If
+
+If (Veget1.Value = False) Then
+TextVeget.Enabled = False
+TextVeget.Text = ""
+End If
+End Sub
